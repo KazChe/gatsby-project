@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { Seo } from "./seo";
+import { header, content } from "../styles/layout.module.css";
 import "../styles/globals.css"
 
 export function Layout({
@@ -24,13 +25,13 @@ export function Layout({
     return (
         <>
         <Seo title={title} description={description} image={image} />
-        <header>
+        <header className={header}>
             <Link to="/">{meta.title}</Link>
             <nav>
                 <Link to="/about">About</Link>
             </nav>
         </header>
-        <main>
+        <main className={content}>
             {children}
         </main>
         </>
